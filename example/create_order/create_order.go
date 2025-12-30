@@ -35,7 +35,7 @@ func main() {
 	OrderID := "OID74586321"
 	Amount := int64(10)
 
-	reqBody, timestamp, sign, clientSign, err := apiObj.CreateOrder(ChainTokenId, OrderID, Amount)
+	reqBody, timestamp, sign, clientSign, err := apiObj.CreateOrder(ChainTokenId, OrderID, "http://test.com/pay.html", Amount)
 	if err != nil {
 		logrus.Warnln("Error: ", err)
 		return
