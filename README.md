@@ -241,6 +241,7 @@ Sandbox environment API address: [https://testnet.chainugo.com/sdk/](https://tes
 | ChainID  | Y        | string | Public chain ID      |
 | OpenId   | Y        | string | User's unique OpenId |
 | Amount   | Y        | string | The user's recharge amount can only be an integer |
+| ReturnUrl  | N  | string | ReturnUrl         |
 
 Token 类型
 
@@ -290,7 +291,8 @@ curl --location 'https://testnet.chainugo.com/sdk/user/order/create' \
 --data '{
   "OrderID":"PT00001",
   "ChainTokenId":"7",
-  "Amount":"10"
+  "Amount":"10",
+"ReturnUrl":"http://test.com/return.html"
 }'
 ```
 key： parnter Key
@@ -319,6 +321,7 @@ clientSign： The generation rule is `rsaWithMd5("send data key=value, use & to 
 | data.token       | string | Recharge currency         |
 | data.status      | int32  | Order status: 0 = waiting for recharge, 1 = recharge successful, 2 = recharge failed |
 | data.endTime     | int64  | Order end time            |
+| data.returnUrl  | string | ReturnUrl                     |
 | sign             | string | Platform signature        |
 
 Return instance
