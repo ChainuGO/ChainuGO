@@ -247,6 +247,7 @@ timestamp： 当前时间戳单位为毫秒转换成字符串
 | ChainTokenId | 是   | string | 链ID对应币ID唯一标识 |
 | OrderID  | 是   | string | 用户的唯一 OrderID |
 | Amount  | 是   | string | 用户的充值金额，只能整数 |
+| ReturnUrl  | 否  | string | 跳转Url         |
 
 Token 类型
 
@@ -296,7 +297,8 @@ curl --location 'https://testnet.chainugo.com/sdk/user/order/create' \
 --data '{
   "OrderID":"PT00001",
   "ChainTokenId":"7",
-  "Amount":"10"
+  "Amount":"10",
+ "ReturnUrl":"http://test.com/return.html"
 }'
 ```
 
@@ -325,6 +327,7 @@ timestamp： 当前时间戳单位为毫秒转换成字符串
 | data.token       | string | 充值币种            |
 | data.status      | int32  | 订单状态：0=等待充值，1=充值成功，2=充值失败 |
 | data.endTime     | int64  | 订单结束时间        |
+| data.returnUrl  | string | 跳转url                     |
 | sign             | string | 平台签名            |
 
 返回实例
