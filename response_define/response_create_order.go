@@ -18,4 +18,5 @@ type ResponseUserCreateOrderData struct {
 	Token       string  `json:"token"`
 	Status      int32   `json:"status"`
 	EndTime     int     `json:"endTime"`
+	ReturnUrl   string  json:"returnUrl"
 }
